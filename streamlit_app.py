@@ -13,8 +13,8 @@ file=st.file_uploader('选择要上传的文件',type='csv')
 if file is not None:
     df=pd.read_csv(file)
     
-    xaxis=st.multiselect('选择x轴变量',options=df.columns)
-    yaxis=st.multiselect('选择x轴变量',options=df.columns)
+    xaxis=st.multiselect('选择x轴变量',options=df.columns,key=1)
+    yaxis=st.multiselect('选择x轴变量',options=df.columns,key=2)
     fig=go.Figure()
     fig.add_trace(go.Scatter(x=df[xaxis],y=df[yaxis]))
     st.plotly_chart(fig, use_container_width=True)
