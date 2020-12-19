@@ -9,9 +9,9 @@ import streamlit as st
 import plotly.graph_objects as go
 import pandas as pd
 
-file=st.file_uploader('选择要上传的文件',type='xlsx')
+file=st.file_uploader('选择要上传的文件',type='csv')
 if file is not None:
-    df=pd.read_excel(file)
+    df=pd.read_csv(file)
     
     xaxis=st.multiselect('选择x轴变量',options=df.columns)
     yaxis=st.multiselect('选择x轴变量',options=df.columns)
